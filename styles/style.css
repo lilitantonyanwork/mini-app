@@ -131,7 +131,6 @@ button {
     color: #000;
     font-size: 20px;
     font-family: 'Involve SemiBold', sans-serif;
-    font-weight: 600;
 }
 .user__notifications{
     position: relative;
@@ -179,7 +178,7 @@ button {
     font-family: "Involve SemiBold", sans-serif;
     margin-bottom: 14px;
     font-size: 20px;
-    font-weight: 600;
+
 }
 .inventory__list{
     display: flex;
@@ -245,7 +244,7 @@ button {
 .rating__position{
     font-size: 20px;
     font-family: "Involve SemiBold", sans-serif;
-    font-weight: 600;
+
     line-height: 100%;
 }
 .rating__item--active .user__name, .rating__item:hover .user__name{
