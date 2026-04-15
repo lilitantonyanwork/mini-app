@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telegram Mini App</title>
+
+  <script src="<>https://telegram.org/js/telegram-web-app.js</>"></script>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+<div id="loader">
+  <img src="assets/images/bg.png" alt="loading" />
+</div>
+<div id="app" class="app">
+
+    <div class="user">
+     <div class="user__info">
+       <img src="assets/images/user.png" alt="user">
+       <h3 class="user__name">@user</h3>
+     </div>
+      <div class="user__actions ">
+        <span class="user__finance">100 000 €</span>
+        <button class="user__notifications">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M2.52992 14.394C2.31727 15.7471 3.268 16.6862 4.43205 17.1542C8.89481 18.9486 15.1052 18.9486 19.5679 17.1542C20.732 16.6862 21.6827 15.7471 21.4701 14.394C21.3394 13.5625 20.6932 12.8701 20.2144 12.194C19.5873 11.2975 19.525 10.3197 19.5249 9.27941C19.5249 5.2591 16.1559 2 12 2C7.84413 2 4.47513 5.2591 4.47513 9.27941C4.47503 10.3197 4.41272 11.2975 3.78561 12.194C3.30684 12.8701 2.66061 13.5625 2.52992 14.394Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 21C9.79613 21.6219 10.8475 22 12 22C13.1525 22 14.2039 21.6219 15 21" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="user__notifications--count">27</span>
+        </button>
+      </div>
+    </div>
+  <div id="inventory"  class="inventory page active">
+   <div class="inventory__tabs">
+      <button class="tab__item" data-id="home">Home</button>
+      <button class="tab__item" data-id="apps">Apps</button>
+      <button class="tab__item" data-id="games">Games</button>
+      <button class="tab__item tab__item--active" data-id="movies">Movies</button>
+      <button class="tab__item" data-id="books">Books</button>
+   </div>
+    <div class="inventory__content">
+      <div id="home" class="tab__content" ></div>
+      <div id="apps" class="tab__content"></div>
+      <div id="games" class="tab__content" ></div>
+      <div id="movies" class="tab__content active">
+        <h3 class="section__title">Level 1</h3>
+        <div class="inventory__list">
+          <div class="inventory__item">
+            <div class="inventory__img">
+              <img src="assets/images/1.png" alt="1">
+            </div>
+            <h4 class="inventory__name">Квартира в Мюнхене</h4>
+            <button class="btn__inventory">11 902 234 €</button>
+          </div>
+          <div class="inventory__item">
+            <div class="inventory__img">
+              <img src="assets/images/2.png" alt="1">
+            </div>
+            <h4 class="inventory__name">Квартира в Цюрихе</h4>
+            <button class="btn__inventory">11 902 234 €</button>
+          </div>
+          <div class="inventory__item">
+            <div class="inventory__img">
+              <img src="assets/images/3.png" alt="1">
+            </div>
+            <h4 class="inventory__name">Квартира в Берлине</h4>
+            <button class="btn__inventory">11 902 234 €</button>
+          </div>
+        </div>
+        <h3 class="section__title">Level 1</h3>
+        <div class="inventory__list">
+          <div class="inventory__item">
+            <div class="inventory__img">
+              <img src="assets/images/4.png" alt="1">
+            </div>
+            <h4 class="inventory__name">Квартира в Мюнхене</h4>
+            <button class="btn__inventory">11 902 234 €</button>
+          </div>
+          <div class="inventory__item">
+            <div class="inventory__img">
+              <img src="assets/images/5.png" alt="1">
+            </div>
+            <h4 class="inventory__name">Квартира в Цюрихе</h4>
+            <button class="btn__inventory">11 902 234 €</button>
+          </div>
+          <div class="inventory__item">
+            <div class="inventory__img">
+              <img src="assets/images/6.png" alt="1">
+            </div>
+            <h4 class="inventory__name">Квартира в Берлине</h4>
+            <button class="btn__inventory">11 902 234 €</button>
+          </div>
+        </div>
+      </div>
+      <div id="books" class="tab__content" ></div>
+    </div>
+  </div>
+  <div id="rating"  class="rating page">
+      <h2 class="section__title">Топ-100 игроков</h2>
+    <div class="rating__list">
+      <div class="rating__item">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>1</span>
+        </div>
+      </div>
+      <div class="rating__item">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>2</span>
+        </div>
+      </div>
+      <div class="rating__item">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>3</span>
+        </div>
+      </div>
+      <div class="rating__item">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>4</span>
+        </div>
+      </div>
+      <div class="rating__item">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>5</span>
+        </div>
+      </div>
+      <div class="rating__item rating__item--active">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>6</span>
+        </div>
+      </div>
+      <div class="rating__item">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>7</span>
+        </div>
+      </div>
+      <div class="rating__item">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>8</span>
+        </div>
+      </div>
+      <div class="rating__item">
+        <div class="rating__user">
+          <img src="assets/images/user.png" alt="user">
+          <h3 class="user__name">@user</h3>
+        </div>
+        <div class="rating__position">
+          <span>9</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="tasks"  class="tasks page">
+      <h2 class="section__title">Задания</h2>
+    <div class="tasks__tabs">
+      <button class="tab__item tab__item--active" data-id="new">Новые</button>
+      <button class="tab__item " data-id="in-process">В процессе</button>
+      <button class="tab__item " data-id="done">Выполненные</button>
+    </div>
+    <div class="task__content">
+      <div id="new" class="tab__content active tasks__list">
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div id="in-process" class=" tab__content tasks__list">
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div id="done"  class="tab__content tasks__list">
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="task__item">
+          Подписаться на Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="super-box">
+      <div class="super-box__img">
+        <img src="assets/images/gifts.png" alt="gifts">
+      </div>
+      <div class="super-box__info">
+        <h3>Ежедневный SUPER BOX!</h3>
+        <button class="btn__box">Открыть</button>
+      </div>
+    </div>
+
+  </div>
+  <div id="friends" class="friends page">
+    <h2 class="section__title">Друзья</h2>
+    <p class="empty__message">У вас пока нет друзей</p>
+    <div class="friends__bottom">
+      <button class="btn__friend">Пригласить друга</button>
+      <button class="btn__copy">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none">
+          <path d="M6 11C6 8.17157 6 6.75736 6.87868 5.87868C7.75736 5 9.17157 5 12 5H15C17.8284 5 19.2426 5 20.1213 5.87868C21 6.75736 21 8.17157 21 11V16C21 18.8284 21 20.2426 20.1213 21.1213C19.2426 22 17.8284 22 15 22H12C9.17157 22 7.75736 22 6.87868 21.1213C6 20.2426 6 18.8284 6 16V11Z" stroke="#ffffff" stroke-width="1.5"/>
+          <path d="M6 19C4.34315 19 3 17.6569 3 16V10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H15C16.6569 2 18 3.34315 18 5" stroke="#ffffff" stroke-width="1.5"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="finance" class="finance page">
+    <h2 class="section__title">Мои финанцы</h2>
+    <button class="btn__connect">Подключить кошелёк
+    </button>
+  </div>
+  <nav class="nav ">
+    <button data-page="inventory" class="nav__item nav__item--active">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 6.5L17.5 9.5L12 12.5L6.5 9.5L12 6.5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 15V16.7993C6 17.8322 6.18419 18.1541 7.10557 18.6241L11.1056 20.6642C11.9834 21.1119 12.0166 21.1119 12.8944 20.6642L16.8944 18.6241C17.8158 18.1541 18 17.8322 18 16.7993V15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.3366 4.16039L12 6.27308L9.66338 4.16039C8.83959 3.41554 8.42769 3.04312 7.92383 3.00345C7.41998 2.96377 6.95823 3.26741 6.03473 3.87468L4.36211 4.97455C3.46519 5.56434 3.01674 5.85924 3.00045 6.29741C2.98417 6.73558 3.40941 7.06515 4.25991 7.72429L6.4348 9.40983L4.25991 11.0954C3.40942 11.7545 2.98417 12.0841 3.00045 12.5222C3.01674 12.9604 3.46519 13.2553 4.36211 13.8451L6.92973 15.5335C7.42226 15.8574 7.66853 16.0193 7.93725 15.9982C8.20597 15.977 8.42565 15.7784 8.86501 15.3811L12 12.5466L14.3366 14.6593C15.1604 15.4041 15.5723 15.7765 16.0762 15.8162C16.58 15.8559 17.0418 15.5522 17.9653 14.945L19.6379 13.8451C20.5348 13.2553 20.9833 12.9604 20.9996 12.5222C21.0158 12.0841 20.5906 11.7545 19.7401 11.0954L17.5652 9.40983L19.7401 7.72429C20.5906 7.06515 21.0158 6.73558 20.9996 6.29741C20.9833 5.85924 20.5348 5.56434 19.6379 4.97455L17.9653 3.87468C17.0418 3.26741 16.58 2.96377 16.0762 3.00345C15.5723 3.04312 15.1604 3.41554 14.3366 4.16039Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Инвентарь
+    </button>
+    <button data-page="rating" class="nav__item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 12V18" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M12 18C10.3264 18 8.86971 19.012 8.11766 20.505C7.75846 21.218 8.27389 22 8.95877 22H15.0412C15.7261 22 16.2415 21.218 15.8823 20.505C15.1303 19.012 13.6736 18 12 18Z" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M5 5H3.98471C2.99819 5 2.50493 5 2.20017 5.37053C1.89541 5.74106 1.98478 6.15597 2.16352 6.9858C2.50494 8.57086 3.24548 9.9634 4.2489 11" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M19 5H20.0153C21.0018 5 21.4951 5 21.7998 5.37053C22.1046 5.74106 22.0152 6.15597 21.8365 6.9858C21.4951 8.57086 20.7545 9.9634 19.7511 11" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M12 12C15.866 12 19 8.8831 19 5.03821C19 4.93739 18.9978 4.83707 18.9936 4.73729C18.9509 3.73806 18.9295 3.23845 18.2523 2.61922C17.5751 2 16.8247 2 15.324 2H8.67596C7.17526 2 6.42492 2 5.74772 2.61922C5.07051 3.23844 5.04915 3.73806 5.00642 4.73729C5.00215 4.83707 5 4.93739 5 5.03821C5 8.8831 8.13401 12 12 12Z" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Рейтинг
+    </button>
+    <button data-page="tasks" class="nav__item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M7.99805 16H11.998M7.99805 11H15.998" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7.5 3.5C5.9442 3.54667 5.01661 3.71984 4.37477 4.36227C3.49609 5.24177 3.49609 6.6573 3.49609 9.48836V15.9944C3.49609 18.8255 3.49609 20.241 4.37477 21.1205C5.25345 22 6.66767 22 9.49609 22H14.4961C17.3245 22 18.7387 22 19.6174 21.1205C20.4961 20.241 20.4961 18.8255 20.4961 15.9944V9.48836C20.4961 6.6573 20.4961 5.24177 19.6174 4.36228C18.9756 3.71984 18.048 3.54667 16.4922 3.5" stroke="black" stroke-width="1.5"/>
+        <path d="M7.49609 3.75C7.49609 2.7835 8.2796 2 9.24609 2H14.7461C15.7126 2 16.4961 2.7835 16.4961 3.75C16.4961 4.7165 15.7126 5.5 14.7461 5.5H9.24609C8.2796 5.5 7.49609 4.7165 7.49609 3.75Z" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      Задания
+    </button>
+    <button data-page="friends" class="nav__item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 5.73791C14 5.73791 12.8849 6.23808 12.1017 5.85651C11.1464 5.39118 10.1991 3.44619 12.0914 2" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8.00897 9H8M16 9H15.991" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 15C8.91212 16.2144 10.3643 17 12 17C13.6357 17 15.0879 16.2144 16 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Друзья
+    </button>
+    <button data-page="finance" class="nav__item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 19.5C10.6675 20.1224 8.91707 20.5 7 20.5C5.93408 20.5 4.91969 20.3833 4 20.1726C2.41828 19.8103 2 18.8796 2 17.386V6.61397C2 5.62914 3.04003 4.95273 4 5.1726C4.91969 5.38325 5.93408 5.5 7 5.5C8.91707 5.5 10.6675 5.12236 12 4.5C13.3325 3.87764 15.0829 3.5 17 3.5C18.0659 3.5 19.0803 3.61675 20 3.8274C21.5817 4.18968 22 5.12036 22 6.61397V17.386C22 18.3709 20.96 19.0473 20 18.8274C19.0803 18.6167 18.0659 18.5 17 18.5C15.0829 18.5 13.3325 18.8776 12 19.5Z" stroke="black" stroke-width="1.5"/>
+        <path d="M14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5C13.3807 9.5 14.5 10.6193 14.5 12Z" stroke="black" stroke-width="1.5"/>
+        <path d="M5.5 13V13.009" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18.5 10.9922V11.0012" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Финансы
+    </button>
+  </nav>
+</div>
+
+
+<script src="js/app.js"></script>
+</body>
+</html>
